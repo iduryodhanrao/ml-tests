@@ -1,7 +1,3 @@
-Absolutely—let’s unpack neural networks in a way that feels intuitive, especially for someone with your expertise, Duryodhan.
-
----
-
 ## 🧠 What Is a Neural Network?
 
 A **Neural Network** is a machine learning model inspired by the **structure and function of the human brain**. It consists of layers of interconnected nodes (**neurons**) that process data in stages to learn patterns and make predictions.
@@ -177,7 +173,7 @@ MLPs excel at **tabular data tasks**, especially when CNNs and RNNs don’t fit 
 - Easily interpretable compared to deeper architectures
 - Great baseline model before jumping into deep learning’s heavyweights
 
-Absolutely, Duryodhan—activation functions are the lifeblood of neural networks. They introduce non-linearity so your models can learn complex patterns rather than just linear relationships.
+Activation functions are the lifeblood of neural networks. They introduce non-linearity so your models can learn complex patterns rather than just linear relationships.
 
 ---
 
@@ -220,5 +216,12 @@ An **activation function** takes in a neuron's weighted input and **decides what
 | NLP models / Transformers      | GELU, Tanh                   |
 | Regression output              | None (linear activation)     |
 
+## 🔍 Additional Use Case Tips
+
+- 🧮 **Regression Tasks**: Use **linear activation** (i.e., no non-linearity) in the output layer to predict continuous values.
+- 📉 **Anomaly Detection**: MLPs with **ReLU** or **Leaky ReLU** in hidden layers, **Sigmoid** in output for scoring abnormality.
+- 🛠️ **Hybrid Models**: Use different activations per layer depending on architecture—for example:
+  - CNN encoder (ReLU) + MLP decoder (ELU)
+  - TabTransformer using **GELU** internally
 ---
 
