@@ -360,10 +360,6 @@ An **activation function** takes in a neuron's weighted input and **decides what
   - TabTransformer using **GELU** internally
 ---
 
-Absolutely, Duryodhan — weight initialization is one of those underappreciated factors that can make or break your network’s learning dynamics, especially in deeper models. Here's a comprehensive guide tailored to how different initialization techniques align with activation functions and model architectures.
-
----
-
 ## 🧠 Why Weight Initialization Matters
 Before training starts, each neuron’s weights and biases are set to initial values. These values determine how inputs flow through the network and how gradients behave during backpropagation.
 Poor initialization can lead to:
