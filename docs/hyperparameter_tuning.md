@@ -24,3 +24,50 @@
 | Transformer Models (e.g., BERT, GPT) | `learning_rate`, `batch_size`, `epochs`, `warmup_steps`, `max_seq_length`, `num_attention_heads`, `dropout_rate`, `weight_decay` | Sentiment analysis, question answering, document summarization |
 | Autoencoders                | `latent_dim`, `activation_function`, `optimizer`, `epochs`, `batch_size`, `dropout_rate`     | Anomaly detection in network traffic or manufacturing |
 | Deep Reinforcement Learning | `learning_rate`, `discount_factor (gamma)`, `epsilon`, `batch_size`, `target_update_freq`, `replay_buffer_size` | Autonomous driving and robotic control |
+
+
+# 📊 Online vs. Offline Metrics in Machine Learning
+
+Understanding the distinction between **offline** and **online** evaluation metrics is key to building robust, production-ready ML systems.
+- **Offline metrics** help validate model performance before deployment.
+- **Online metrics** measure real-world impact and user behavior post-deployment.
+- A robust ML workflow uses **both** to ensure reliability, relevance, and business value.
+
+---
+
+## 🧪 Offline Metrics
+
+Offline metrics are computed using **historical or hold-out datasets** in a controlled environment. They help assess model performance before deployment.
+
+| Metric                     | Description                                                                 | Real-World Model Example |
+|---------------------------|-----------------------------------------------------------------------------|---------------------------|
+| Accuracy                  | Proportion of correct predictions                                           | Email spam classifier     |
+| Precision                 | True positives / predicted positives                                        | Fraud detection (minimize false alarms) |
+| Recall (Sensitivity)      | True positives / actual positives                                           | Cancer detection (minimize missed cases) |
+| F1 Score                  | Harmonic mean of precision and recall                                       | Customer churn prediction |
+| ROC-AUC                   | Area under ROC curve; measures ranking quality                              | Credit risk scoring       |
+| Log Loss                  | Penalizes incorrect probability estimates                                   | Multi-class sentiment analysis |
+| RMSE / MAE                | Regression errors (Root Mean Squared / Mean Absolute Error)                 | House price prediction    |
+| R² (Coefficient of Determination) | Proportion of variance explained by the model                     | Marketing ROI modeling    |
+| NDCG / MAP                | Ranking quality in recommendation systems                                   | E-commerce product ranking |
+| Confusion Matrix          | Breakdown of TP, FP, FN, TN                                                 | Disease classification    |
+
+---
+
+## 🌐 Online Metrics
+
+Online metrics are collected **after deployment**, often via **A/B testing** or **live user interactions**. They reflect real-world impact.
+
+| Metric                     | Description                                                                 | Real-World Model Example |
+|---------------------------|-----------------------------------------------------------------------------|---------------------------|
+| Click-Through Rate (CTR)  | Ratio of clicks to impressions                                              | News recommendation engine |
+| Conversion Rate           | Percentage of users completing a desired action                             | Ad targeting model        |
+| Bounce Rate               | Percentage of users leaving without interaction                             | Search ranking algorithm  |
+| Dwell Time                | Time spent engaging with content                                             | Video recommendation model |
+| Retention Rate            | Users returning after initial interaction                                   | Mobile app personalization |
+| Revenue Lift              | Increase in revenue due to model deployment                                 | Dynamic pricing model     |
+| Engagement Score          | Composite metric of user interactions                                       | Social media feed ranking |
+| Satisfaction Score (DSAT) | Explicit user feedback or dissatisfaction analytics                         | Voice assistant response quality |
+| Latency / Throughput      | Model response time and scalability                                          | Real-time fraud detection |
+| Model Drift Detection     | Monitoring distribution shift over time                                     | Predictive maintenance system |
+
