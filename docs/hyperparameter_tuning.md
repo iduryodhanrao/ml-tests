@@ -26,6 +26,8 @@
 | Deep Reinforcement Learning | `learning_rate`, `discount_factor (gamma)`, `epsilon`, `batch_size`, `target_update_freq`, `replay_buffer_size` | Autonomous driving and robotic control |
 
 
+---
+
 # 📊 Online vs. Offline Metrics in Machine Learning
 
 Understanding the distinction between **offline** and **online** evaluation metrics is key to building robust, production-ready ML systems.
@@ -39,18 +41,18 @@ Understanding the distinction between **offline** and **online** evaluation metr
 
 Offline metrics are computed using **historical or hold-out datasets** in a controlled environment. They help assess model performance before deployment.
 
-| Metric                     | Description                                                                 | Real-World Model Example |
-|---------------------------|-----------------------------------------------------------------------------|---------------------------|
-| Accuracy                  | Proportion of correct predictions                                           | Email spam classifier     |
-| Precision                 | True positives / predicted positives                                        | Fraud detection (minimize false alarms) |
-| Recall (Sensitivity)      | True positives / actual positives                                           | Cancer detection (minimize missed cases) |
-| F1 Score                  | Harmonic mean of precision and recall                                       | Customer churn prediction |
-| ROC-AUC                   | Area under ROC curve; measures ranking quality                              | Credit risk scoring       |
-| Log Loss                  | Penalizes incorrect probability estimates                                   | Multi-class sentiment analysis |
-| RMSE / MAE                | Regression errors (Root Mean Squared / Mean Absolute Error)                 | House price prediction    |
-| R² (Coefficient of Determination) | Proportion of variance explained by the model                     | Marketing ROI modeling    |
-| NDCG / MAP                | Ranking quality in recommendation systems                                   | E-commerce product ranking |
-| Confusion Matrix          | Breakdown of TP, FP, FN, TN                                                 | Disease classification    |
+| Metric                     | Description                                                                 | Real-World Model Example              | Applicability |
+|---------------------------|-----------------------------------------------------------------------------|--------------------------------------|---------------|
+| Accuracy                  | Proportion of correct predictions                                           | Email spam classifier (LogReg, CNN)  | Both          |
+| Precision                 | True positives / predicted positives                                        | Fraud detection (XGBoost, BERT)      | Both          |
+| Recall (Sensitivity)      | True positives / actual positives                                           | Cancer detection (DT, ResNet)        | Both          |
+| F1 Score                  | Harmonic mean of precision and recall                                       | Churn prediction (SVM, LSTM)         | Both          |
+| ROC-AUC                   | Area under ROC curve; measures ranking quality                              | Credit risk scoring (RF, DNN)        | Both          |
+| Log Loss                  | Penalizes incorrect probability estimates                                   | Sentiment analysis (Softmax Classifier) | Both        |
+| RMSE / MAE                | Regression errors (Root Mean Squared / Mean Absolute Error)                 | House price prediction (Linear, LSTM)| Both          |
+| R² (Coefficient of Determination) | Proportion of variance explained by the model                     | Marketing ROI modeling (Regression)  | NDL           |
+| NDCG / MAP                | Ranking quality in recommendation systems                                   | Product ranking (GBoost Ranker, Transformer) | Both    |
+| Confusion Matrix          | Breakdown of TP, FP, FN, TN                                                 | Disease classification (CNN)         | Both          |
 
 ---
 
@@ -58,16 +60,23 @@ Offline metrics are computed using **historical or hold-out datasets** in a cont
 
 Online metrics are collected **after deployment**, often via **A/B testing** or **live user interactions**. They reflect real-world impact.
 
-| Metric                     | Description                                                                 | Real-World Model Example |
-|---------------------------|-----------------------------------------------------------------------------|---------------------------|
-| Click-Through Rate (CTR)  | Ratio of clicks to impressions                                              | News recommendation engine |
-| Conversion Rate           | Percentage of users completing a desired action                             | Ad targeting model        |
-| Bounce Rate               | Percentage of users leaving without interaction                             | Search ranking algorithm  |
-| Dwell Time                | Time spent engaging with content                                             | Video recommendation model |
-| Retention Rate            | Users returning after initial interaction                                   | Mobile app personalization |
-| Revenue Lift              | Increase in revenue due to model deployment                                 | Dynamic pricing model     |
-| Engagement Score          | Composite metric of user interactions                                       | Social media feed ranking |
-| Satisfaction Score (DSAT) | Explicit user feedback or dissatisfaction analytics                         | Voice assistant response quality |
-| Latency / Throughput      | Model response time and scalability                                          | Real-time fraud detection |
-| Model Drift Detection     | Monitoring distribution shift over time                                     | Predictive maintenance system |
+| Metric                     | Description                                                                 | Real-World Model Example                | Applicability |
+|---------------------------|-----------------------------------------------------------------------------|----------------------------------------|---------------|
+| Click-Through Rate (CTR)  | Ratio of clicks to impressions                                              | News recommendation (LogReg, Wide&Deep) | Both         |
+| Conversion Rate           | Percentage of users completing a desired action                             | Ad targeting (GBM, Transformer)         | Both          |
+| Bounce Rate               | Percentage of users leaving without interaction                             | Search ranking algorithm (SVM, RankNet)| NDL           |
+| Dwell Time                | Time spent engaging with content                                             | Video recommendation (RNN, BERT4Rec)   | DL            |
+| Retention Rate            | Users returning after initial interaction                                   | Mobile personalization (Deep Seq Model)| DL            |
+| Revenue Lift              | Increase in revenue due to model deployment                                 | Dynamic pricing (Elastic Net, DNN)     | Both          |
+| Engagement Score          | Composite metric of user interactions                                       | Feed ranking (CNN + RNN Features)      | DL            |
+| Satisfaction Score (DSAT) | Explicit user feedback or dissatisfaction analytics                         | Voice assistant (Sentiment Classifier) | DL            |
+| Latency / Throughput      | Model response time and scalability                                          | Fraud detection (Real-time LSTM)       | DL            |
+| Model Drift Detection     | Monitoring distribution shift over time                                     | Predictive maintenance (Monitoring + DL) | DL         |
 
+---
+
+## 🔍 Notes
+
+- **DL**: Models like CNNs, RNNs, Transformers.
+- **NDL**: Classical ML models — Logistic Regression, Trees, SVMs.
+- **Both**: Metrics useful across model types depending on task complexity and data modality.
