@@ -37,9 +37,21 @@ An agent learns to make decisions by taking actions in an environment to maximiz
 | **Dynamic Pricing or Ad Placement** | **Multi-Armed Bandit or Q-learning** | The goal is to find the best "action" (e.g., price or ad) to maximize a reward (e.g., revenue or clicks). A Multi-Armed Bandit is simple and effective for this. |
 
 ----
+## Brief about ML models
+| Model | Description | 
+| :--- | :--- |
+| Regression models | Linear Regression, Polynomial Regression. |
+| Classification models | Logistic Regression, Naive Bayes. |
+| Models used for both | Decision Tree, Random Forest, Support Vector Machines, K-Nearest Neighbors. |
+| Ensembles | Bagging, Boosting, Voting and Stacking. |
+| Deep Learning | Fully Connected (Dense) Neural Networks. |
+| Unsupervised learning | K-Means clustering and Principal Component Analysis (PCA) dimensionality reduction technique. |
+
+
+---
 ## Details about Classical ML regression models
 
-| Model | Description                 | Pros | Cons | When to Use | Real-world Use Cases |
+| Model | Description | Pros | Cons | When to Use | Real-world Use Cases |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Linear Regression** | Establishes a linear relationship between a dependent variable and one or more independent variables. The model finds the best-fitting straight line (or hyperplane) that minimizes the sum of squared errors. Coefficients represent the impact of each feature. | Highly interpretable, computationally efficient, easy to implement and understand. | Assumes a linear relationship, sensitive to outliers, can suffer from multicollinearity. | When you have a dataset with a likely linear relationship and need a simple, fast, and interpretable model. | Predicting a company's sales based on advertising spending, forecasting house prices. |
 | **Polynomial Regression** | A form of linear regression that models a non-linear relationship as an n-th degree polynomial. It fits a curve to the data, allowing it to capture more complex patterns than a straight line. | Can model non-linear relationships that linear regression can't capture. | Can easily overfit if the polynomial degree is too high, less interpretable than linear regression. | When the relationship is clearly non-linear, but you want to avoid a more complex model. | Modeling population growth over time, predicting the trajectory of a projectile. |
